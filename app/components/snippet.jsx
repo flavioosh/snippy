@@ -20,7 +20,7 @@ export default class Snippet extends React.Component {
         this.handleDeleteClick = this.handleDeleteClick.bind(this);
     }
 
-    componentDidMount() {
+    componentDidUpdate() {
         var language;
         for(var i = 0; i < this.props.languages.length; i++) {
             if(this.props.languages[i].name === this.props.snippet.language) {
