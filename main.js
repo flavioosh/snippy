@@ -1,6 +1,7 @@
 require('babel-core/register');
 
 const { app, BrowserWindow } = require('electron');
+const windowStateKeeper = require('electron-window-state');
 
 const path = require('path');
 const url = require('url');
@@ -12,10 +13,17 @@ let mainWindow;
 let config = new Config();
 
 function createWindow() {
+    let mainWindowState = windowStateKeeper({
+        defaultWidth: 960,
+        defaultHeight: 640
+    });
+
     mainWindow = new BrowserWindow({
         backgroundColor: '#515767',
-        width: 960,
-        height: 640,
+        x: mainWindowState.x,
+        y: mainWindowState.y,
+        width: mainWindowState.width,
+        height: mainWindowState.height,
         autoHideMenuBar: true,
         frame: config.get('useSystemTitleBar') || false
     });
@@ -29,6 +37,8 @@ function createWindow() {
     mainWindow.on('closed', function() {
         mainWindow = null;
     });
+
+    mainWindowState.manage(mainWindow);
 }
 
 app.on('ready', createWindow);
