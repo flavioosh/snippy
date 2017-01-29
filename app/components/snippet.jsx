@@ -77,9 +77,6 @@ export default class Snippet extends React.Component {
     }
 
     render() {
-        if(this.props.snippet.language == 'JSX') {
-            console.log(this.props.snippet.code);
-        }
         var tagElements = [];
         this.props.snippet.tags.forEach((tag) => {
             tagElements.push(<Tag key={tag} handleClick={this.props.handleTagClick} tag={tag} />);
