@@ -1,0 +1,102 @@
+.sn-snippet
+    @include shadow-1()
+
+    background: hsl(222, 12%, 26%)
+    border-radius: 2px
+    height: 196px
+    list-style: none
+    margin: 8px
+    overflow: hidden
+    position: relative
+    user-select: none
+    -webkit-user-select: none
+    width: 256px
+
+    &:hover
+        > button, > .tags, > pre::before
+            opacity: 1
+
+    > pre
+        cursor: default
+        font-size: 10px
+        height: 196px - $snippet-info-height
+        line-height: 14px
+        padding: 4px
+
+        &::before
+            background: linear-gradient(to bottom, $main-color-very-dark 0%, transparent)
+            content: ''
+            height: 48px
+            left: 0
+            opacity: 0
+            position: absolute
+            right: 0
+            top: 0
+            transition: opacity .2s
+
+    > button
+        opacity: 0
+        position: absolute
+        top: 8px
+        transition: opacity .2s
+        z-index: 10
+
+        &.pin
+            left: 8px
+
+        &.delete
+            right: 8px
+
+    > .tags
+        bottom: $snippet-info-height
+        color: $dark-color
+        display: flex
+        flex-direction: row-reverse
+        flex-wrap: wrap-reverse
+        opacity: 0
+        padding: 4px
+        position: absolute
+        right: 0
+        transition: opacity .2s
+
+        > li
+            background: rgba(255, 255, 255, 0.72)
+            border-radius: 11px
+            cursor: pointer
+            font-size: 14px
+            height: 22px
+            line-height: 22px
+            list-style: none
+            margin: 4px
+            padding: 2px 8px
+            transition: background .2s
+            z-index: 10
+
+            &:hover
+                background: rgba(255, 255, 255, 0.96)
+
+
+    > .info
+        @include absolute-bottom($snippet-info-height)
+
+        background: rgba(255, 255, 255, 0.72)
+        color: $dark-color
+        cursor: default
+        overflow: hidden
+        padding: 4px 8px
+
+        > .name
+            display: block
+            font-size: $snippet-info-height / 8 * 3
+            height: $snippet-info-height / 2
+            line-height: $snippet-info-height / 2
+            overflow: hidden
+            white-space: nowrap
+            text-overflow: ellipsis
+
+        > .detail
+            align-items: flex-end
+            display: flex
+            font-size: 12px
+            height: $snippet-info-height / 2 - 8px
+            justify-content: space-between

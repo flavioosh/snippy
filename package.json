@@ -1,0 +1,48 @@
+{
+  "name": "snippy",
+  "productName": "Snippy",
+  "version": "0.1.0",
+  "description": "A small electron app to store your code snippets",
+  "main": "main.js",
+  "scripts": {
+    "start": "./node_modules/electron/dist/electron .",
+    "build-linux-x64": "electron-packager . --platform=linux --arch=x64 --out=./build/ --overwrite",
+    "build-windows-x64": "electron-packager . --platform=win32 --arch=x64 --out=./build/ --asar --overwrite",
+    "build-windows-ia32": "electron-packager . --platform=win32 --arch=ia32 --out=./build/ --asar --overwrite"
+  },
+  "author": "flavioosh",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/flavioosh/snippy.git"
+},
+  "devDependencies": {
+    "electron": "1.4.13",
+    "electron-packager": "^8.4.0"
+  },
+  "dependencies": {
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-react": "^6.16.0",
+    "babel-register": "^6.18.0",
+    "classnames": "^2.2.5",
+    "codemirror": "^5.21.0",
+    "electron-config": "^0.2.1",
+    "moment": "^2.17.1",
+    "nedb": "^1.8.0",
+    "radium": "^0.18.1",
+    "react": "^15.4.1",
+    "react-codemirror": "^0.3.0",
+    "react-dom": "^15.4.1",
+    "react-tagsinput": "^3.14.0"
+  },
+  "babel": {
+    "presets": [
+      "es2015",
+      "react"
+    ],
+    "plugins": [
+      "transform-decorators-legacy"
+    ]
+  }
+}

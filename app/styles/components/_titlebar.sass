@@ -1,0 +1,49 @@
+.sn-titlebar
+    -webkit-app-region: drag
+    background: $main-color-dark
+    color: $color
+    height: $titlebar-height
+    left: 0
+    overflow: hidden
+    position: fixed
+    right: 0
+    top: 0
+    user-select: none
+    -webkit-user-select: none
+    z-index: 1000
+
+    &.blur
+        background: $main-color-slightly-dark
+
+    > .title
+        font-size: 14px
+        line-height: $titlebar-height
+        left: 0
+        position: absolute
+        right: 0
+        text-align: center
+
+    > .buttons
+        display: flex
+        position: absolute
+        right: 0
+
+        > button
+            -webkit-app-region: no-drag
+            background: none
+            height: $titlebar-height
+            transition: background .2s
+            width: $titlebar-height
+            z-index: 1010
+
+            > svg
+                fill: $color
+                height: 16px
+                margin: (($titlebar-height - 16) / 2) auto
+                width: 16px
+
+            &:hover
+                background: rgba(255, 255, 255, 0.16)
+
+            &:active
+                background: rgba(0, 0, 0, 0.16)

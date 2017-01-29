@@ -1,0 +1,30 @@
+button
+    background: none
+    border-radius: 2px
+    color: $color
+    font-size: 14px
+    height: 32px
+    line-height: 32px
+    text-transform: uppercase
+    transition: background .2s
+
+    &:hover
+        background: $highlight-color
+
+    &:active
+        background: $darken-color
+
+    > span
+        padding: 0 16px
+
+    &.icon
+
+        > svg
+            fill: rgba(255, 255, 255, 0.64)
+            height: 24px
+            margin: 4px
+            transition: fill .2s
+            width: 24px
+
+        &:hover > svg
+            fill: $color

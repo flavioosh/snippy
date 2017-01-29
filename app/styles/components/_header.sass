@@ -1,0 +1,12 @@
+.sn-header
+    @include absolute-top($header-height)
+
+    align-items: center
+    display: flex
+    justify-content: space-between
+    padding: 0 16px
+    transition: box-shadow .2s
+    z-index: 100
+
+    &.shadow
+        @include shadow-1()

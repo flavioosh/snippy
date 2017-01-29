@@ -1,0 +1,20 @@
+@mixin absolute($top, $right: $top, $bottom: $top, $left: $right)
+    bottom: $bottom
+    left: $left
+    position: absolute
+    right: $right
+    top: $top
+
+@mixin absolute-top($height, $top: 0, $left: 0, $right: $left)
+    height: $height
+    left: $left
+    position: absolute
+    right: $right
+    top: $top
+
+@mixin absolute-bottom($height, $bottom: 0, $left: 0, $right: $left)
+    bottom: $bottom
+    height: $height
+    left: $left
+    position: absolute
+    right: $right

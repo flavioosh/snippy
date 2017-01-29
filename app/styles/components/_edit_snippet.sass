@@ -1,0 +1,134 @@
+.sn-edit-snippet
+    @include shadow-1()
+
+    background: $main-color-dark
+    border-radius: 2px
+    color: $color
+    display: flex
+    flex-direction: column
+    height: 80%
+    left: 50%
+    position: fixed
+    top: 50%
+    transform: translate(-50%, -50%)
+    user-select: none
+    -webkit-user-select: none
+    width: 80%
+    z-index: 500
+
+    > .contents
+        @include shadow-1()
+
+        background: $main-color
+        border-radius: 2px
+        display: flex
+        flex-direction: column
+        flex-grow: 1
+
+        > header
+            align-items: center
+            display: flex
+
+            > input
+                background: none
+                border-bottom: 2px solid $main-color-very-light
+                color: $color
+                flex-grow: 1
+                font-size: 18px
+                height: 28px
+                line-height: 28px
+                margin: 12px
+                padding: 8px
+
+            > select
+                background: $main-color-dark
+                border-radius: 2px
+                color: $color
+                height: 32px
+                font-size: 16px
+                margin: 8px
+                padding: 4px
+
+        > .ReactCodeMirror
+            flex-grow: 1
+            height: 100%
+            position: relative
+
+        .CodeMirror
+            font-size: 14px
+            height: 100%
+            left: 0
+            line-height: 20px
+            position: absolute
+            right: 0
+            top: 0
+
+        > .react-tagsinput
+            border-bottom: 2px solid $main-color-very-light
+            margin: 8px
+            padding: 0 4px
+
+            > span
+                display: flex
+                flex-wrap: wrap
+
+                > .react-tagsinput-tag
+                    background: $main-color-very-dark
+                    border-radius: 2px
+                    color: $color
+                    cursor: default
+                    font-size: 16px
+                    height: 28px
+                    line-height: 28px
+                    list-style: none
+                    margin: 4px
+                    padding: 0 30px 0 8px
+                    position: relative
+
+                    > .react-tagsinput-remove
+                        border-radius: 2px
+                        bottom: 4px
+                        color: $red-accent-color
+                        font-size: 24px
+                        height: 20px
+                        line-height: 20px
+                        position: absolute
+                        right: 4px
+                        text-align: center
+                        top: 4px
+                        transition: background .2s, color .2s
+                        width: 20px
+
+                        &:hover
+                            background: $red-accent-color
+                            color: $color
+
+                        &::before
+                            content: '×'
+
+                > input.react-tagsinput-input
+                    background: none
+                    color: $color
+                    flex-grow: 1
+                    font-size: 16px
+                    height: 30px
+                    margin: 4px 4px 2px
+                    padding: 0 12px
+
+
+    > section.actions
+        display: flex
+        justify-content: flex-end
+        padding: 8px
+
+        > button
+            margin-left: 8px
+
+            &.save
+                background: hsl(109, 75%, 39%)
+
+                &:hover
+                    background: hsl(109, 75%, 49%)
+
+                &:active
+                    background: hsl(109, 75%, 29%)

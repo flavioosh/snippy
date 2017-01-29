@@ -1,0 +1,59 @@
+.sn-searchbar
+    height: 36px
+    left: 50%
+    position: absolute
+    top: 50%
+    transform: translate(-50%, -50%)
+    width: 400px
+
+    > input
+        @include shadow-1()
+
+        background: $highlight-color
+        border: none
+        border-radius: 2px
+        display: block
+        font-size: 20px
+        height: 100%
+        padding: 6px 12px
+        transition: box-shadow .2s, background .2s
+        width: 100%
+
+        &:hover
+            @include shadow-2()
+
+            background: rgba(255, 255, 255, 0.24)
+
+        &:focus, &:focus:not([value=""])
+            @include shadow-2()
+
+            background: rgba(255, 255, 255, 0.88)
+
+        &:not([value=""])
+            background: rgba(255, 255, 255, 0.64)
+
+        &:not([value=""]) + button
+            opacity: 1
+            pointer-events: auto
+
+    > button
+        background: none
+        height: 28px
+        opacity: 0
+        pointer-events: none
+        position: absolute
+        right: 4px
+        top: 4px
+        width: 28px
+
+        > svg
+            fill: $main-color
+            height: 24px
+            margin: 2px
+            width: 24px
+
+        &:hover > svg
+            fill: $main-color-light
+
+        &:active > svg
+            fill: $main-color-dark
