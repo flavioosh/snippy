@@ -161,7 +161,7 @@ export default class App extends React.Component {
     handleSnippetDelete(snippetID) {
         SnippetCollection.remove({
             _id: snippetID
-        })
+        });
         this.loadData();
     }
 
